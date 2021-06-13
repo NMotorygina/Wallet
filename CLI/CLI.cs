@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Wallet
+namespace CLI
 {
     public static class CLI
     {
@@ -41,11 +41,32 @@ namespace Wallet
             Console.ResetColor();
         }
 
-        public static double Input(string message)
+        public static double InputMoney(string message)
         {
             Console.Write(message);
             var temp = Convert.ToDouble(Console.ReadLine());
             return temp;
+        }
+
+        public static DateTime InputDate(string message)
+        {
+            Console.Write(message);
+            var temp = Convert.ToDateTime(Console.ReadLine());
+            return temp;
+        }
+
+        public static void InputIncome(out WalletLibrary.IncomeEnum income)
+        {
+            Console.Write("Выберите тип дохода:");
+            Console.WriteLine("1 - Зарплата");
+            Console.WriteLine("2 - Дивиденды");
+            var select = Console.ReadLine();
+            income = select switch
+            {
+                "1" => WalletLibrary.IncomeEnum.Salary,
+                "2" => WalletLibrary.IncomeEnum.Dividends,
+                _ => WalletLibrary.IncomeEnum.Unknown
+            };
         }
     }
 }

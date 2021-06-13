@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace Wallet
+namespace CLI
 {
     public static class File
     {
