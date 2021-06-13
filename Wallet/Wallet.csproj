@@ -7,6 +7,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\CLI\CLI.csproj" />
+      <ProjectReference Include="..\WalletLibrary\WalletLibrary.csproj" />
     </ItemGroup>
 
 </Project>
