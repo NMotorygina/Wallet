@@ -14,14 +14,22 @@ namespace Wallet
             Console.ResetColor();
         }
 
+        public static void StartMenu()
+        {
+            Console.ForegroundColor = ConsoleColor.Yellow;
+            Console.WriteLine("Хотите создать новый кошелёк?");
+            Console.WriteLine("Y/Д - Да, хочу");
+            Console.WriteLine("N/Н - Нет, не хочу");
+            Console.ResetColor();
+        }
+
         public static void Menu()
         {
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Варианты работы:");
-            Console.WriteLine("1 - Создать кошелёк");
-            Console.WriteLine("2 - Сколько денег в кошельке");
-            Console.WriteLine("3 - Внести доход");
-            Console.WriteLine("4 - Учесть расходы");
+            Console.WriteLine("1 - Сколько денег в кошельке");
+            Console.WriteLine("2 - Внести доход");
+            Console.WriteLine("3 - Учесть расходы");
             Console.WriteLine("0 - Выйти из программы");
             Console.ResetColor();
         }
