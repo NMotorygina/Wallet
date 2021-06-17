@@ -8,11 +8,8 @@ namespace WalletLibrary
         public IncomeEnum IncomeEnum { get; set; }
         public double Sum { get; set; }
 
-        public Income()
-        {
-            Date = new DateTime();
-        }
-
+        public Income() {}
+        
         public Income(DateTime date, IncomeEnum incomeEnum, double sum)
         {
             Date = date;

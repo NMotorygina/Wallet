@@ -24,8 +24,7 @@ namespace Wallet
                 }
                 else
                 {
-                    money = CLI.File.Import();
-                    wallet.Init(money);
+                    CLI.File.Import(wallet);
                 }
             }
             else
@@ -33,7 +32,7 @@ namespace Wallet
                 money = CLI.CLI.InputMoney("Введите начальную сумму в кошельке ");
                 wallet.Init(money);
             }
-
+            
             do
             {
                 CLI.CLI.Menu();
@@ -50,16 +49,21 @@ namespace Wallet
                         wallet.Income(date, income, money);
                         break;
                     case "3": // 3 - Учесть расходы
+                        date = CLI.CLI.InputDate("Введите дату расхода - ");
                         money = CLI.CLI.InputMoney("Введите расход - ");
-                        wallet.Outgo(money);
+                        CLI.CLI.InputOutgo(out var outgo);
+                        wallet.Outgo(date, outgo, money);
+                        break;
+                    case "4": // 4 - Отчет о доходах/расходах
+                        CLI.CLI.PrintIncomesOutgoes(wallet);
                         break;
                     case "0": // 0 - Выйти из программы
                         CLI.CLI.Bye();
-                        CLI.File.Export(wallet.Money());
+                        CLI.File.Export(wallet);
                         break;
                     default:
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.WriteLine("Введите правильный вариант работй!");
+                        Console.WriteLine("Введите правильный вариант работы!");
                         Console.ResetColor();
                         break;
                 }

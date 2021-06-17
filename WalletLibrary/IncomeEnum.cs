@@ -2,6 +2,6 @@
 {
     public enum IncomeEnum
     {
-        Unknown, Salary, Dividends
+        UnknownIncome, Salary, Dividends
     }
 }
